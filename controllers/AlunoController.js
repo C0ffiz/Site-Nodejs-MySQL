@@ -31,6 +31,10 @@ module.exports = class AlunoController {
       .catch((err) => console.log(err))
   }
 
+  static showDashboard(req, res) {
+    res.render('alunos/dashboard',{})
+  }
+
   static removeAluno(req, res) {
     const id = req.body.id
 

@@ -63,8 +63,8 @@
 
   <div class="container-fluid">
     <div class="row">
-      <div class="col" id="sobre">
-        <p>SOBRE</p>
+      <div class="col text-center" id="sobre">
+        <h5>Sobre</h5>
       </div>
       <div class="col" style="background-color: #f7eae2;">
         <p></p>
@@ -77,7 +77,7 @@
     <div class="modal-dialog">
       <div class="modal-content card bg-dark text-light container py-5 h-100 justify-content-center align-items-center text-center">
         <div class="modal-header ">
-          <button type="button" class="btn-close justify-content-end align-items-end " data-bs-dismiss="modal" aria-label="Close"></button>
+          {{!-- <button type="button" class="btn-close justify-content-end align-items-end " data-bs-dismiss="modal" aria-label="Close"></button> --}}
           <span aria-hidden="true"></span>
           </button>
         </div>
@@ -94,8 +94,8 @@
                 <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Password"/>
             </div>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Submit</button>
+          <div class="modal-footer align-items-center justify-content-center">
+            <button type="button" value="Redirect" onclick="login_redirect()" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </div>
@@ -109,6 +109,10 @@
     tooltips.forEach(t => {
       new bootstrap.Tooltip(t)
     })
+
+    function login_redirect(){
+      window.location.assign("/alunos/dashboard")
+    }
   </script>
 
   <div>

@@ -8,6 +8,7 @@ router.post('/add', AlunoController.createAlunoSave)
 router.post('/remove', AlunoController.removeAluno)
 router.get('/edit/:id', AlunoController.updateAluno)
 router.post('/edit', AlunoController.updateAlunoPost)
+router.get('/dashboard', AlunoController.showDashboard)
 
 router.post('/updatestatus', AlunoController.changeStatus)
 
