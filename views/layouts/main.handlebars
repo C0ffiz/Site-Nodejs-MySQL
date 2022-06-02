@@ -33,6 +33,14 @@
   #sobre{
     background-color: #DAA89F;
   }
+
+  .formcrud{
+    background-color: #f7eae2
+  }
+
+  .custom-contaner{
+    margin: ;
+  }
 </style>
 
 <body>
@@ -62,12 +70,13 @@
   </div>
 
   <div class="container-fluid">
-    <div class="row">
+    <div class="row custom-container">
       <div class="col text-center" id="sobre">
         <h5>Sobre</h5>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti maiores perspiciatis, fugiat est error, et, debitis ut soluta excepturi nemo commodi! Nesciunt aliquam ea earum fugit sunt tenetur consequuntur nisi!</p>
       </div>
       <div class="col" style="background-color: #f7eae2;">
-        <p></p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti maiores perspiciatis, fugiat est error, et, debitis ut soluta excepturi nemo commodi! Nesciunt aliquam ea earum fugit sunt tenetur consequuntur nisi!</p>
       </div>
   </div>
 
@@ -102,7 +111,13 @@
     </div>
   </div>
 
-  
+<form class="card formcrud text-dark">
+
+  <div>
+    {{{ body }}}
+  </div>
+</form>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   <script>
     const tooltips = document.querySelectorAll('.tt')
@@ -111,13 +126,12 @@
     })
 
     function login_redirect(){
-      window.location.assign("/alunos/dashboard")
+      window.location = ("/alunos/dashboard")
     }
   </script>
+  
 
-  <div>
-    {{{ body }}}
-  </div>
+  
 </body>
 
 </html>
