@@ -18,6 +18,11 @@ module.exports = class AlunoController {
     }
 
     static showAlunos(req, res) {
+        
+    }
+
+    static showDashboard(req, res) {
+        res.render('/layouts/dashboard', {})
         Aluno.findAll({ raw: true })
             .then((data) => {
                 let emptyAlunos = false
@@ -29,11 +34,6 @@ module.exports = class AlunoController {
                 res.render('alunos/all', { alunos: data, emptyAlunos })
             })
             .catch((err) => console.log(err))
-    }
-
-    static showDashboard(req, res) {
-        res.render('/layouts/dashboard', {})
-
 
     }
 
