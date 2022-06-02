@@ -1,11 +1,32 @@
-<h1>Inserir usuario</h1>
-<form action="/alunos/add" method="POST">
+<section>
 
-    <label for="nome">Nome:</label>
-    <input type="text" name="nome">
+  <div class="custom-create1">
+    <form class="card custom-create" action="/alunos/add" method="post">
+        <h1>Inserir usuario</h1>
 
-    <label for="matricula">Matrícula:</label>
-    <input type="text" name="matricula">
+        <label for="nome"><br></label>
+        <input class="form-control" type="text" name="nome" placeholder="Nome">
 
-  <input type="submit" value="Inserir">
-</form>
+        <label for="matricula"><br></label>
+        <input class="form-control" type="text" name="matricula" placeholder="Celular">
+        <br>
+      <input class="btn btn-secondary btn-lg" type="submit" value="Inserir">
+    </form>
+  </div>
+</section>
+
+
+<style>
+  .custom-create{
+    width: 40%;
+    margin: auto;
+    background-color: bisque;
+  }
+  .custom-create1{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: rgb(255, 242, 225);
+  }
+  
+</style>

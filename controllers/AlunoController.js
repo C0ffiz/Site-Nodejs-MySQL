@@ -2,7 +2,7 @@ const Aluno = require('../models/Aluno')
 
 module.exports = class AlunoController {
     static createAluno(req, res) {
-        res.render('alunos/create')
+        res.render('alunos/create', {layout: "dashboard"})
     }
 
     static createAlunoSave(req, res) {
@@ -13,16 +13,16 @@ module.exports = class AlunoController {
         }
 
         Aluno.create(aluno)
-            .then(res.redirect('/alunos'))
+            .then(res.redirect('dashboard'))
             .catch((err) => console.log())
     }
 
     static showAlunos(req, res) {
-        
+      res.render('layouts/main', {})
     }
 
     static showDashboard(req, res) {
-        res.render('/layouts/dashboard', {})
+        // res.render('layouts/dashboard', {})
         Aluno.findAll({ raw: true })
             .then((data) => {
                 let emptyAlunos = false
@@ -31,7 +31,7 @@ module.exports = class AlunoController {
                     emptyAlunos = true
                 }
 
-                res.render('alunos/all', { alunos: data, emptyAlunos })
+                res.render('alunos/all', { alunos: data, emptyAlunos, layout: "dashboard" })
             })
             .catch((err) => console.log(err))
 
