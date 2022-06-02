@@ -1,35 +1,58 @@
-<h1>Usuarios</h1>
-  {{#if emptyAlunos}}
-    <p>Sem usuarios cadastrados</p>
+
+<section>
+<div class="all-div">
+
+
+  <h1>Usuarios</h1>
+  <br>
+    {{#if emptyAlunos}}
+      <p>Sem usuarios cadastrados</p>
+      
+    {{/if}}
     
-  {{/if}}
-  
-  {{#each alunos}}
-      <b>{{this.nome}}</b> - 
-        <form action="/alunos/updatestatus" method="POST" style="display: inline;">
-          <input type="hidden" name="id" value={{this.id}}>
-          <input type="hidden" name="status" value={{this.status}}>
-          <button type="submit">
-            {{#if this.status}}
-              desabilitar
-            {{else}}
-              habilitar
-            {{/if}}
-          </button>
-        </form>
-        
-        {{!-- <form action="/alunos/edit/{{this.id}}" style="display: inline;">
-            <input type="submit" value="editar" />
-        </form> --}}
+    {{#each alunos}}
+        <b>{{this.nome}}</b> - 
+          <form action="/alunos/updatestatus" method="POST" style="display: inline;">
+            <input type="hidden" name="id" value={{this.id}}>
+            <input type="hidden" name="status" value={{this.status}}>
+            <button type="submit">
+              {{#if this.status}}
+                desabilitar
+              {{else}}
+                habilitar
+              {{/if}}
+            </button>
+          </form>
+          
+          {{!-- <form action="/alunos/edit/{{this.id}}" style="display: inline;">
+              <input type="submit" value="editar" />
+          </form> --}}
 
-        <a href="/alunos/edit/{{this.id}}">editar</a>
+          <a href="/alunos/edit/{{this.id}}">editar</a>
 
-        <form action="/alunos/remove" method="POST" style="display: inline;">
-          <input type="hidden" name="id" value={{this.id}}>
-          <button type="submit">
-            excluir
-          </button>
-        </form>
-    <hr>
-  {{/each}}
-  <a href="/alunos/add">Add</a>
+          <form action="/alunos/remove" method="POST" style="display: inline;">
+            <input type="hidden" name="id" value={{this.id}}>
+            <button type="submit">
+              excluir
+            </button>
+          </form>
+      <hr>
+    {{/each}}
+    <a href="/alunos/add">Add</a>
+
+
+</div>
+</section>
+
+<style>
+  section{
+    width: 100%;
+    background-color: rgb(255, 242, 225);
+    text-align: center;
+  }
+  .all-div{
+    width: 40%;
+    margin: auto;
+    background-color: bisque;
+  }
+</style>
