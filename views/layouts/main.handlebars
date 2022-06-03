@@ -9,75 +9,110 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
+
 <style>
-  .navbar-custom {
-    background-color: #966666;
-  }
 
-  li {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-  }
+@font-face {
+    font-family: 'SF Compact Text';
+    src: url('/fonts/SFCompactText-Bold.ttf') format('truetype');
+}
 
-  body{
-    background-color: #f7eae2;
-    
-  }
+@font-face {
+  font-family: 'Inter SemiBold';
+  src: url('/fonts/Inter-SemiBold.ttf') format('truetype');
+}
 
-  #imagemcentral{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.navbar-custom {
+  background-color: #7D3436;
+  font-family: 'Inter SemiBold';
+  font-size: 30px;
+  text-shadow: 2px 2px 3px #512223;
 
-  #sobre{
-    background-color: #DAA89F;
-  }
+}
+.navbar-custom li{
+  padding-right: 80px;
+}
 
-  .formcrud{
-    background-color: #f7eae2
-  }
+body{
+  background-color: #f7eae2;
+  width: 100%; 
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  
+}
 
-  .custom-contaner{
-    margin: ;
-  }
+#imagemcentral{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#sobre{
+  background-color: #DAA89F;
+  font-size: 30px;
+  font: bold;
+  font-family: 'SF Compact Text';
+  color: #D6D1D8;
+}
+
+p {
+    word-break: break-all;
+    white-space: normal;
+}
+
+.formcrud{
+  background-color: #f7eae2
+}
+
+
 </style>
 
 <body>
 
-  <nav class="navbar navbar-custom navbar-expand-sm">
-    <div class="container-fluid">
+  <nav class="navbar navbar-custom navbar-expand-sm" style="width: 100%; height: 122px;">
+    <div class="container-fluid" style="width: 100%; height: 122px;">
       <div class="navbar-header">
-        <a class="navbar-brand" href="javascript:void(0)"><img src="./imgs/logo.png" style="width: 50px;"></a>
+        <a class="navbar-brand" href="javascript:void(0)"><img src="./imgs/logo.png" style="width: 111px;"></a>
       </div>
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav navbar-right">
         <li class="nav-item"><a class="nav-link text-light" href="#">Home</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="#">Page 1</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="#">Page 2</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#" data-bs-toggle="modal" data-bs-target="#reg-modal">
+          Login</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item btn "><a class="nav-link text-light" data-bs-toggle="modal" data-bs-target="#reg-modal"><span class="glyphicon glyphicon-log-in"></span>
-            Login</a></li>
-      </ul>
+      
     </div>
   </nav>
 
-  <div class="container-fluid">
+  <div class="">
     <div class="row">
       <div class="col"><img src="./imgs/flor-esquerda.png"></div>
       <div class="col"><img src="./imgs/imagemcentral.png" id="imagemcentral"></div>
       <div class="col"><img src="./imgs/flor-direita.png" style="float: right;"></div>
   </div>
 
-  <div class="container-fluid">
-    <div class="row custom-container">
+  <div class="">
+    <div class="row">
       <div class="col text-center" id="sobre">
-        <h5>Sobre</h5>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti maiores perspiciatis, fugiat est error, et, debitis ut soluta excepturi nemo commodi! Nesciunt aliquam ea earum fugit sunt tenetur consequuntur nisi!</p>
+        <div style="margin: 100px;">
+          <h5 style="font-size: 70px; color: #7D3436;">Sobre</h5>
+          <br>
+          <br>
+          <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
       </div>
       <div class="col" style="background-color: #f7eae2;">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti maiores perspiciatis, fugiat est error, et, debitis ut soluta excepturi nemo commodi! Nesciunt aliquam ea earum fugit sunt tenetur consequuntur nisi!</p>
+        <img src="imgs/Bloco Foto Boleira.png" style="width: 100%; height: 100%;">
       </div>
+    </div>
+  </div>
+
+  <div>
+    <div>
+      <img src="imgs/tela Localizacao.png" style="width: 100%; height: 100%;">
+    </div>
   </div>
 
 
@@ -93,7 +128,7 @@
           <div class="mb-md-5 mt-md-4 pb-5">
             <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
             <p class="text-white-50 5">Please enter your login and password!</p>
-
+            <br>
             <div class="modal-body">
               <div class="form-outline form-white mb-4">
                 <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Email"/>
@@ -111,10 +146,7 @@
     </div>
   </div>
 
-<form class="card formcrud text-dark">
 
-  
-</form>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   <script>
@@ -128,7 +160,6 @@
     }
   </script>
   
-
   
 </body>
 
