@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
@@ -9,7 +9,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <title>main</title>
 </head>
-
 
 <style>
 
@@ -23,11 +22,16 @@
   src: url('/fonts/Inter-SemiBold.ttf') format('truetype');
 }
 
+.nav{
+  flex-wrap: nowrap;
+}
+
 .navbar-custom {
   background-color: #7D3436;
   font-family: 'Inter SemiBold';
   font-size: 30px;
   text-shadow: 2px 2px 3px #512223;
+  
 }
 
 .navbar-custom li{
@@ -42,8 +46,6 @@ html,body{
   padding: 0;
   
 }
-
-
 
 #imagemcentral{
   
@@ -65,13 +67,75 @@ p {
     margin:0;
 }
 
-
-
 .formcrud{
   background-color: #f7eae2
 }
 
+.top {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  text-align: center;
+  font-size: 70px;
+  font: bold;
+  font-family: 'SF Compact Text';
+  color: #7D3436;
+}
 
+.centered{
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.centered img{
+  padding-right: 150px;
+  padding-left: 150px;
+  width: 100%;
+}
+
+.promocoes{
+  background-color: #F7EAE2;
+  text-align: center;
+  padding-top: 100px;
+  font-family: 'SF Compact Text';
+}
+
+.promocoes p {
+  font-size: 40px;
+}
+
+.promocoes p1 {
+  font-size: 50px;
+}
+
+.promocenter{
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: inline-block;
+  width: 100%;
+  color: #7D3436;
+  
+}
+
+.promocoes img{
+  width: 90%;
+  border-radius: 50%;
+  max-width: 363px;
+}
+
+.row{
+  flex-wrap: nowrap;
+}
+
+.footer{
+  background-color: #7D3436;
+  width: 100%;
+  height: 305px;
+}
 
 </style>
 
@@ -84,12 +148,11 @@ p {
       </div>
       <ul class="nav navbar-nav navbar-right">
         <li class="nav-item"><a class="nav-link text-light" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="#">Page 1</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="#">Page 2</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#">Promoções</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="#" data-bs-toggle="modal" data-bs-target="#reg-modal">
           Login</a></li>
       </ul>
-      
     </div>
   </nav>
 
@@ -105,13 +168,12 @@ p {
       <div class="col text-center" id="sobre">
         <div style="margin: 100px;">
           <h5 style="font-size: 70px; color: #7D3436;">Sobre</h5>
-          <br>
-          <br>
+          <br><br>
           <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
         </div>
       </div>
       <div class="col" style="background-color: #f7eae2;">
-        <img src="imgs/Bloco Foto Boleira.png" style="width: 100%; height: 100%;">
+        <img src="imgs/Bloco Foto Boleira.png" style="width: 100%; ">
       </div>
     </div>
   </div>
@@ -122,6 +184,73 @@ p {
     </div>
   </div>
 
+  <div style="">
+    <div style="position: relative; text-align: center;">
+      <img src="imgs/Bloco Galeria.png" style="width: 100%; height: 50%;">
+      <div class="top"><h5 style="font-size: 70px; color: #7D3436;">Galeria</h5></div>
+        <div class="centered">
+          <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <img src="imgs/foto galeria.png">
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <img src="imgs/foto galeria.png">
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <img src="imgs/foto galeria.png">
+            </div>
+
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="promocoes">
+    <h5 style="font-size: 70px; font:bold; color: #7D3436;">Promoções</h5>
+    <div class="promocenter">
+      <div class="row">
+
+        <div class="col-lg-3 col-md-4 col-sm-6" style="width: ;">
+          <img src="imgs/lula.jpg">
+          <p>Bolo + Cafe</p>
+          <p1>R$ 20,00</p1>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <img src="imgs/lula.jpg">
+          <p>Bolo + Cafe</p>
+          <p1>R$ 20,00</p1>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <img src="imgs/lula.jpg">
+          <p>Bolo + Cafe</p>
+          <p1>R$ 20,00</p1>
+        </div>
+        
+        <div class="col-lg-3 col-md-4 col-sm-6">
+          <img src="imgs/lula.jpg">
+          <p>Bolo + Cafe</p>
+          <p1>R$ 20,00</p1>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="container-fluid">
+      <div>
+        <a class="navbar-brand" href="javascript:void(0)"><img src="./imgs/logo2.png" style="width: 434px; height: 304px;"></a>
+      </div>
+      <div>
+        
+      </div>
+    </div>
+  </div>
 
   <!-- modal itself -->
   <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
