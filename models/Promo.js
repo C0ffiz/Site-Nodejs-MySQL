@@ -11,7 +11,7 @@ const Promo = db.define('Promo', {
         type: DataTypes.STRING,
     },
     preco: {
-        type: DataTypes.STRING,
+        type: DataTypes.FLOAT,
     },
 })
 

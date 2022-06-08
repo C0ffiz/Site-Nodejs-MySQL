@@ -47,11 +47,12 @@
 <div class="all-div">
   <h1>Promoções</h1><br>
   
-  <form action="/alunos/updatepromo" method="POST" enctype="multipart/form-data">
+  <form action="/alunos/updatepromo" method="post" enctype="multipart/form-data">
     <b>Promoção 1</b><br>
-    {{!-- <label for="nome"></label>
-    <input class="form-control" type="text" name="nome" placeholder="Nome"><br>
-    <input class="form-control" type="text" name="preco" placeholder="Preço"><br> --}}
+    <label for="nome"></label>
+    <input type="hidden" name="id" value="1">
+    <input class="form-control" type="text" name="produto" placeholder="Produto"><br>
+    <input class="form-control" type="text" name="preco" placeholder="Preço"><br>
     <input class="" type="file" name="sampleFile" accept="image/*"/><br><br>
     <input class="btn btn-primary btn" type="submit" value="Inserir">
   </form>
@@ -61,7 +62,8 @@
   <form action="/alunos/updatepromo" method="POST" enctype="multipart/form-data">
     <b>Promoção 2</b><br>
     <label for="nome"></label>
-    <input class="form-control" type="text" name="nome" placeholder="Nome"><br>
+    <input type="hidden" name="id" value="2">
+    <input class="form-control" type="text" name="produto" placeholder="Produto"><br>
     <input class="form-control" type="text" name="preco" placeholder="Preço"><br>
     <input class="" type="file" name="sampleFile" accept="image/*"/><br><br>
     <input class="btn btn-primary btn" type="submit" value="Inserir">
@@ -74,7 +76,8 @@
 
     <b>Promoção 3</b><br>
     <label for="nome"></label>
-    <input class="form-control" type="text" name="nome" placeholder="Nome"><br>
+    <input type="hidden" name="id" value="3">
+    <input class="form-control" type="text" name="produto" placeholder="Produto"><br>
     <input class="form-control" type="text" name="preco" placeholder="Preço"><br>
     <input class="" type="file" name="sampleFile" accept="image/*"/><br><br>
     <input class="btn btn-primary btn" type="submit" value="Inserir">
@@ -85,7 +88,8 @@
   <form action="/alunos/updatepromo" method="POST" enctype="multipart/form-data">
     <b>Promoção 4</b><br>
     <label for="nome"></label>
-    <input class="form-control" type="text" name="nome" placeholder="Nome"><br>
+    <input type="hidden" name="id" value="4">
+    <input class="form-control" type="text" name="produto" placeholder="Produto"><br>
     <input class="form-control" type="text" name="preco" placeholder="Preço"><br>
     <input class="" type="file" name="sampleFile" accept="image/*"/><br><br>
     <input class="btn btn-primary btn" type="submit" value="Inserir"><br><br>

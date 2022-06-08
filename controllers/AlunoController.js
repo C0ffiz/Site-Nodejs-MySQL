@@ -1,4 +1,5 @@
 const Cliente = require('../models/Cliente')
+const Promo = require('../models/Promo')
 
 module.exports = class AlunoController {
     static createCliente(req, res) {
@@ -18,7 +19,14 @@ module.exports = class AlunoController {
     }
 
     static showCliente(req, res) {
-      res.render('layouts/main', {})
+      Promo.findAll({ raw: true })
+      .then((data) => {
+       
+
+        res.render('layouts/main', { promos: data})
+    })
+        .catch((err) => console.log(err))
+        
     }
 
     static showDashboard(req, res) {
@@ -89,6 +97,15 @@ module.exports = class AlunoController {
         let uploadPath;
         console.log(req.body);
         
+        
+
+        let {id, produto, preco} = req.body
+        let promo = {produto, preco}
+        console.log(produto, preco);
+
+        Promo.update(promo, { where: { id: id } })
+            .then(res.redirect('dashboard'))
+            .catch((err) => console.log())
 
 
         if(!req.files || Object.keys(req.files).length === 0){

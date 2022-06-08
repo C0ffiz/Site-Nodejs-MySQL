@@ -212,31 +212,14 @@ p {
     <h5 style="font-size: 70px; font:bold; color: #7D3436;">Promoções</h5>
     <div class="promocenter">
       <div class="row">
+        {{#each promos}}
+          <div class="col-lg-3 col-md-4 col-sm-6" style="width: ;">
+            <img src="imgs/lula.jpg">
+            <p>{{this.produto}}</p>
+            <p1>{{this.preco}}</p1>
+          </div>
+        {{/each}}
 
-        <div class="col-lg-3 col-md-4 col-sm-6" style="width: ;">
-          <img src="imgs/lula.jpg">
-          <p>Bolo + Cafe</p>
-          <p1>R$ 20,00</p1>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <img src="imgs/lula.jpg">
-          <p>Bolo + Cafe</p>
-          <p1>R$ 20,00</p1>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <img src="imgs/lula.jpg">
-          <p>Bolo + Cafe</p>
-          <p1>R$ 20,00</p1>
-        </div>
-        
-        <div class="col-lg-3 col-md-4 col-sm-6">
-          <img src="imgs/lula.jpg">
-          <p>Bolo + Cafe</p>
-          <p1>R$ 20,00</p1>
-        </div>
-      
       </div>
     </div>
   </div>
