@@ -55,7 +55,7 @@ module.exports = class AlunoController {
             .catch((err) => console.log())
     }
 
-    static updateAlunoPost(req, res) {
+    static updateClientePost(req, res) {
         const id = req.body.id
 
         const cliente = {
@@ -82,5 +82,23 @@ module.exports = class AlunoController {
         Cliente.update(cliente, { where: { id: id } })
             .then(res.redirect('dashboard'))
             .catch((err) => console.log())
+    }
+
+    static updatePromotion(req, res) {
+        let sampleFile;
+        let uploadPath;
+        console.log(req.body);
+        
+
+
+        if(!req.files || Object.keys(req.files).length === 0){
+            return res.status(400).send('Nenhuma imagem foi enviada.')
+        }
+
+        sampleFile = req.files.sampleFile;
+        console.log(sampleFile);
+
+        
+
     }
 }

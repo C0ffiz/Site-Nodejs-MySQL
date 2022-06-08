@@ -1,7 +1,9 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
+const fileUpload = require('express-fileupload')
 
 const app = express()
+app.use(fileUpload());
 
 const conn = require('./db/conn')
 
