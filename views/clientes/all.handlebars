@@ -1,0 +1,119 @@
+
+<section>
+<div class="all-div">
+
+
+  <h1>Clientes</h1>
+  <br>
+    {{#if emptyClientes}}
+      <p>Sem usuarios cadastrados</p>
+      
+    {{/if}}
+    
+    {{#each cliente}}
+        <b>{{this.nome}}</b> - 
+          <form action="/alunos/updatestatus" method="POST" style="display: inline;">
+            <input type="hidden" name="id" value={{this.id}}>
+            <input type="hidden" name="status" value={{this.status}}>
+            <button type="submit" class="btn btn-success btn">
+              {{#if this.status}}
+                desabilitar
+              {{else}}
+                habilitar
+              {{/if}}
+            </button>
+          </form>
+          
+          {{!-- <form action="/alunos/edit/{{this.id}}" style="display: inline;">
+              <input type="submit" value="editar" />
+          </form> --}}
+          
+          <form action="/alunos/remove" method="POST" style="display: inline;">
+            <input type="hidden" name="id" value={{this.id}}>
+            <button type="submit" class="btn btn-danger">
+              excluir
+            </button>
+          </form>
+          
+          <button type="button" class="btn btn-primary"><a href="/alunos/edit/{{this.id}}" style="color: white; text-decoration: none;">editar</a></button>
+          
+      <hr>
+    {{/each}}
+    
+    <button type="button" class="btn btn-dark"><a href="/alunos/add" style="text-decoration: none; color: white;">Add</a></button><br><br>
+    
+</div>
+<br>
+<div class="all-div">
+  <h1>Promoções</h1><br>
+  <form action="">
+
+    <b>Promoção 1</b><br>
+    <label for="nome"></label>
+    <input class="form-control" type="text" name="nome" placeholder="Nome"><br>
+    <input class="" type="file" name="sampleFile" accept="image/*"/><br><br>
+    <input class="btn btn-primary btn" type="submit" value="Inserir">
+    <hr>
+    <b>Promoção 2</b><br>
+    <label for="nome"></label>
+    <input class="form-control" type="text" name="nome" placeholder="Nome"><br>
+    <input class="" type="file" name="sampleFile" accept="image/*"/><br><br>
+    <input class="btn btn-primary btn" type="submit" value="Inserir">
+    <hr>
+    <b>Promoção 3</b><br>
+    <label for="nome"></label>
+    <input class="form-control" type="text" name="nome" placeholder="Nome"><br>
+    <input class="" type="file" name="sampleFile" accept="image/*"/><br><br>
+    <input class="btn btn-primary btn" type="submit" value="Inserir">
+    <hr>
+    <b>Promoção 4</b><br>
+    <label for="nome"></label>
+    <input class="form-control" type="text" name="nome" placeholder="Nome"><br>
+    <input class="" type="file" name="sampleFile" accept="image/*"/><br><br>
+    <input class="btn btn-primary btn" type="submit" value="Inserir"><br><br>
+
+  </form>
+
+</div>
+</section>
+
+<style>
+  @font-face {
+    font-family: 'SF Compact Text';
+    src: url('/fonts/SFCompactText-Bold.ttf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Inter SemiBold';
+    src: url('/fonts/Inter-SemiBold.ttf') format('truetype');
+  }
+
+  section{
+    width: 100%;
+    background-color: rgb(255, 242, 225);
+    text-align: center;
+    justify-content: center;
+  }
+
+  section h1{
+    font-size: 50px; 
+    color: #7D3436;
+    font: bold;
+    font-family: 'SF Compact Text';
+  }
+
+  section b{
+    font-family: 'Inter SemiBold';
+  }
+
+  .all-div{
+
+    width: 520px;
+    margin: auto;
+    background-color: bisque;
+    border-radius: 3ch;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
+  }
+</style>

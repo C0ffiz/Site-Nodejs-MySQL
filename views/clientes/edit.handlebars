@@ -1,0 +1,16 @@
+<h1>Editando {{cliente.nome}}</h1>
+<form action="/clientes/edit" method="POST">
+  <input type="hidden" name="id" value={{cliente.id}}>
+    <label for="nome">Nome:</label>
+    <input type="text" name="nome"value="{{cliente.nome}}">
+    <label for="telefone">Telefone:</label>
+    <input type="text" name="telefone"value="{{cliente.telefone}}">
+  <input type="submit" value="Editar">
+</form>
+
+
+
+
+
+
+

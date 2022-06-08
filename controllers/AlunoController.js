@@ -1,23 +1,23 @@
 const Cliente = require('../models/Cliente')
 
 module.exports = class AlunoController {
-    static createAluno(req, res) {
-        res.render('alunos/create', {layout: "dashboard"})
+    static createCliente(req, res) {
+        res.render('clientes/create', {layout: "dashboard"})
     }
 
-    static createAlunoSave(req, res) {
-        const aluno = {
+    static createClienteSave(req, res) {
+        const cliente = {
             nome: req.body.nome,
             telefone: req.body.telefone,
             status: false,
         }
 
-        Cliente.create(aluno)
+        Cliente.create(cliente)
             .then(res.redirect('dashboard'))
             .catch((err) => console.log())
     }
 
-    static showAlunos(req, res) {
+    static showCliente(req, res) {
       res.render('layouts/main', {})
     }
 
@@ -25,19 +25,19 @@ module.exports = class AlunoController {
         // res.render('layouts/dashboard', {})
         Cliente.findAll({ raw: true })
             .then((data) => {
-                let emptyAlunos = false
+                let emptyClientes = false
 
                 if (data.length === 0) {
-                    emptyAlunos = true
+                    emptyClientes = true
                 }
 
-                res.render('alunos/all', { alunos: data, emptyAlunos, layout: "dashboard" })
+                res.render('clientes/all', { cliente: data, emptyClientes, layout: "dashboard" })
             })
             .catch((err) => console.log(err))
 
     }
 
-    static removeAluno(req, res) {
+    static removeCliente(req, res) {
         const id = req.body.id
 
         Cliente.destroy({ where: { id: id } })
@@ -45,12 +45,12 @@ module.exports = class AlunoController {
             .catch((err) => console.log())
     }
 
-    static updateAluno(req, res) {
+    static updateCliente(req, res) {
         const id = req.params.id
 
         Cliente.findOne({ where: { id: id }, raw: true })
             .then((data) => {
-                res.render('alunos/edit', { aluno: data, layout: "dashboard" })
+                res.render('clientes/edit', { cliente: data, layout: "dashboard" })
             })
             .catch((err) => console.log())
     }
@@ -58,12 +58,12 @@ module.exports = class AlunoController {
     static updateAlunoPost(req, res) {
         const id = req.body.id
 
-        const aluno = {
+        const cliente = {
             nome: req.body.nome,
             telefone: req.body.telefone,
         }
 
-        Cliente.update(aluno, { where: { id: id } })
+        Cliente.update(cliente, { where: { id: id } })
             .then(res.redirect('dashboard'))
             .catch((err) => console.log())
     }
@@ -73,13 +73,13 @@ module.exports = class AlunoController {
 
         console.log(req.body)
 
-        const aluno = {
+        const cliente = {
             status: req.body.status === '0' ? true : false,
         }
 
-        console.log(aluno)
+        console.log(cliente)
 
-        Cliente.update(aluno, { where: { id: id } })
+        Cliente.update(cliente, { where: { id: id } })
             .then(res.redirect('dashboard'))
             .catch((err) => console.log())
     }
