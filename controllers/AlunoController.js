@@ -1,4 +1,4 @@
-const Aluno = require('../models/Aluno')
+const Cliente = require('../models/Cliente')
 
 module.exports = class AlunoController {
     static createAluno(req, res) {
@@ -8,11 +8,11 @@ module.exports = class AlunoController {
     static createAlunoSave(req, res) {
         const aluno = {
             nome: req.body.nome,
-            matricula: req.body.matricula,
+            telefone: req.body.telefone,
             status: false,
         }
 
-        Aluno.create(aluno)
+        Cliente.create(aluno)
             .then(res.redirect('dashboard'))
             .catch((err) => console.log())
     }
@@ -23,7 +23,7 @@ module.exports = class AlunoController {
 
     static showDashboard(req, res) {
         // res.render('layouts/dashboard', {})
-        Aluno.findAll({ raw: true })
+        Cliente.findAll({ raw: true })
             .then((data) => {
                 let emptyAlunos = false
 
@@ -40,17 +40,17 @@ module.exports = class AlunoController {
     static removeAluno(req, res) {
         const id = req.body.id
 
-        Aluno.destroy({ where: { id: id } })
-            .then(res.redirect('/alunos'))
+        Cliente.destroy({ where: { id: id } })
+            .then(res.redirect('dashboard'))
             .catch((err) => console.log())
     }
 
     static updateAluno(req, res) {
         const id = req.params.id
 
-        Aluno.findOne({ where: { id: id }, raw: true })
+        Cliente.findOne({ where: { id: id }, raw: true })
             .then((data) => {
-                res.render('alunos/edit', { aluno: data })
+                res.render('alunos/edit', { aluno: data, layout: "dashboard" })
             })
             .catch((err) => console.log())
     }
@@ -60,11 +60,11 @@ module.exports = class AlunoController {
 
         const aluno = {
             nome: req.body.nome,
-            matricula: req.body.matricula,
+            telefone: req.body.telefone,
         }
 
-        Aluno.update(aluno, { where: { id: id } })
-            .then(res.redirect('/alunos'))
+        Cliente.update(aluno, { where: { id: id } })
+            .then(res.redirect('dashboard'))
             .catch((err) => console.log())
     }
 
@@ -79,8 +79,8 @@ module.exports = class AlunoController {
 
         console.log(aluno)
 
-        Aluno.update(aluno, { where: { id: id } })
-            .then(res.redirect('/alunos'))
+        Cliente.update(aluno, { where: { id: id } })
+            .then(res.redirect('dashboard'))
             .catch((err) => console.log())
     }
 }

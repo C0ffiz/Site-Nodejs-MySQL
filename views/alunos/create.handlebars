@@ -2,13 +2,16 @@
 
   <div class="custom-create1">
     <form class="card custom-create" action="/alunos/add" method="post">
-        <h1>Inserir usuario</h1>
-
+        <h1>Inserir cliente</h1>
+        <br>
         <label for="nome"><br></label>
         <input class="form-control" type="text" name="nome" placeholder="Nome">
 
-        <label for="matricula"><br></label>
-        <input class="form-control" type="text" name="matricula" placeholder="Celular">
+        <label for="telefone"><br></label>
+        <input class="form-control" type="text" name="telefone" placeholder="Celular">
+
+        <label for="cpf"><br></label>
+        <input class="form-control" type="text" name="cpf" placeholder="CPF">
         <br>
       <input class="btn btn-secondary btn-lg" type="submit" value="Inserir">
     </form>
@@ -18,7 +21,8 @@
 
 <style>
   .custom-create{
-    width: 40%;
+    width: 400px;
+    height: 400px;
     margin: auto;
     background-color: bisque;
   }
@@ -27,6 +31,12 @@
     height: 100%;
     text-align: center;
     background-color: rgb(255, 242, 225);
+    
+  }
+
+  input{
+    height: 48px;
+    
   }
 
 </style>

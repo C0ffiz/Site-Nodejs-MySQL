@@ -3,7 +3,7 @@
 <div class="all-div">
 
 
-  <h1>Usuarios</h1>
+  <h1>Clientes</h1>
   <br>
     {{#if emptyAlunos}}
       <p>Sem usuarios cadastrados</p>
@@ -15,7 +15,7 @@
           <form action="/alunos/updatestatus" method="POST" style="display: inline;">
             <input type="hidden" name="id" value={{this.id}}>
             <input type="hidden" name="status" value={{this.status}}>
-            <button type="submit">
+            <button type="submit" class="btn btn-success btn">
               {{#if this.status}}
                 desabilitar
               {{else}}
@@ -27,20 +27,21 @@
           {{!-- <form action="/alunos/edit/{{this.id}}" style="display: inline;">
               <input type="submit" value="editar" />
           </form> --}}
-
-          <a href="/alunos/edit/{{this.id}}">editar</a>
-
+          
           <form action="/alunos/remove" method="POST" style="display: inline;">
             <input type="hidden" name="id" value={{this.id}}>
-            <button type="submit">
+            <button type="submit" class="btn btn-danger">
               excluir
             </button>
           </form>
+          
+          <button type="button" class="btn btn-primary"><a href="/alunos/edit/{{this.id}}" style="color: white; text-decoration: none;">editar</a></button>
+          
       <hr>
     {{/each}}
-    <a href="/alunos/add">Add</a>
-
-
+    
+    <button type="button" class="btn btn-dark"><a href="/alunos/add" style="text-decoration: none; color: white;">Add</a></button>
+    
 </div>
 </section>
 
@@ -49,10 +50,16 @@
     width: 100%;
     background-color: rgb(255, 242, 225);
     text-align: center;
+    justify-content: center;
   }
   .all-div{
-    width: 40%;
+
+    width: 520px;
     margin: auto;
     background-color: bisque;
+    border-radius: 3ch;
+    border-color: black;
+    border-style: solid;
+    border-width: 3px;
   }
 </style>

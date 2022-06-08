@@ -5,7 +5,7 @@ const app = express()
 
 const conn = require('./db/conn')
 
-const Aluno = require('./models/Aluno')
+const Cliente = require('./models/Cliente')
 
 const alunoRoutes = require('./routes/alunosRoutes')
 
