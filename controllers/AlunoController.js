@@ -93,14 +93,17 @@ module.exports = class AlunoController {
     }
 
     static updatePromotion(req, res) {
-        let sampleFile;
+        
         let uploadPath;
         console.log(req.body);
         
         
         
-        let {id, produto, preco} = req.body
+        let {id, produto, preco, sampleFile} = req.body
+
+        sampleFile = req.files.sampleFile;
         let img = sampleFile.name;
+        console.log(img);
         let promo = {produto, preco, img}
         console.log(produto, preco, img);
 
@@ -113,7 +116,7 @@ module.exports = class AlunoController {
             uploadPath = process.cwd() + '/public/imgs/' + sampleFile.name;
             
             console.log(sampleFile);
-            img = sampleFile.name;
+            
             
             sampleFile.mv(uploadPath, function (err) {
                 if (err) return res.status(500).send(err);
