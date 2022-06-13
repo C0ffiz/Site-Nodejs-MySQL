@@ -98,24 +98,31 @@ module.exports = class AlunoController {
         console.log(req.body);
         
         
-
+        
         let {id, produto, preco} = req.body
-        let promo = {produto, preco}
-        console.log(produto, preco);
+        let img = sampleFile.name;
+        let promo = {produto, preco, img}
+        console.log(produto, preco, img);
 
-        Promo.update(promo, { where: { id: id } })
-            .then(res.redirect('dashboard'))
-            .catch((err) => console.log())
-
-
+        
         if(!req.files || Object.keys(req.files).length === 0){
             return res.status(400).send('Nenhuma imagem foi enviada.')
         }
+            
+            sampleFile = req.files.sampleFile;
+            uploadPath = process.cwd() + '/public/imgs/' + sampleFile.name;
+            
+            console.log(sampleFile);
+            img = sampleFile.name;
+            
+            sampleFile.mv(uploadPath, function (err) {
+                if (err) return res.status(500).send(err);
+            
+            Promo.update(promo, { where: { id: id } })
+                .then(res.redirect('dashboard'))
+                .catch((err) => console.log())
 
-        sampleFile = req.files.sampleFile;
-        console.log(sampleFile);
 
-        
-
+            });
     }
 }

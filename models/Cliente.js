@@ -16,6 +16,11 @@ const Cliente = db.define('Cliente', {
     cpf: {
         type: DataTypes.STRING,
     },
-})
+});
+
+Cliente.associate = (models) => {
+    Cliente.hasOne(models.Promo,
+        { foreignKey: 'person_id', as: 'promos'});
+};
 
 module.exports = Cliente

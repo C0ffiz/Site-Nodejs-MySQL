@@ -214,7 +214,9 @@ p {
       <div class="row">
         {{#each promos}}
           <div class="col-lg-3 col-md-4 col-sm-6" style="width: ;">
-            <img src="imgs/combo1.jpg">
+            {{#if this.profile_image}}
+              <img src="{{this.profile_image}}" alt="Promo Image">
+            {{/if}}
             <p>{{this.produto}}</p>
             <p1>{{this.preco}}</p1>
           </div>

@@ -15,4 +15,9 @@ const Promo = db.define('Promo', {
     },
 })
 
+Promo.associate = (models) => {
+    Promo.hasMany(models.Cliente,
+        { foreignKey: 'person_id', as: 'clientes'});
+};
+
 module.exports = Promo
