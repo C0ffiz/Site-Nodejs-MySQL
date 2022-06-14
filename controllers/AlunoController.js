@@ -128,4 +128,8 @@ module.exports = class AlunoController {
 
             });
     }
+
+    static updateSobre(req,res) {
+        
+    }
 }

@@ -10,6 +10,7 @@ router.get('/edit/:id', AlunoController.updateCliente)
 router.post('/edit', AlunoController.updateClientePost)
 router.get('/dashboard', AlunoController.showDashboard)
 router.post('/updatepromo', AlunoController.updatePromotion)
+router.post('/updatesobre', AlunoController.updateSobre)
 
 router.post('/updatestatus', AlunoController.changeStatus)
 
