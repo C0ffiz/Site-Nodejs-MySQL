@@ -1,8 +1,8 @@
 <section>
 
   <div class="custom-create1">
-    <form class="card custom-create" action="/alunos/add" method="post">
-        <h1>Inserir cliente</h1>
+    <form class="card custom-create" action="/bolos/add" method="post">
+        <h1>Cadastro</h1>
         <br>
         <label for="nome"><br></label>
         <input class="form-control" type="text" name="nome" placeholder="Nome">
@@ -13,7 +13,7 @@
         <label for="cpf"><br></label>
         <input class="form-control" type="text" name="cpf" placeholder="CPF">
         <br>
-      <input class="btn btn-secondary btn-lg" type="submit" value="Inserir">
+      <input class="btn btn-secondary btn-lg" style="background-color: #7D3436; width: 200px;" type="submit" value="Inserir">
     </form>
   </div>
 </section>
@@ -21,17 +21,36 @@
 
 <style>
   .custom-create{
-    width: 400px;
-    height: 400px;
+    width: 450px;
+    height: 450px;
     margin: auto;
-    background-color: bisque;
+    background-color: #DAA89F;
+    border-radius: 20px;
+    border-width: 3px;
+    border-color: #7D3436;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
   }
+
+  h1{
+    font-size: 70px; 
+    font:bold; 
+    color: #7D3436;"
+    
+  }
+
   .custom-create1{
     width: 100%;
     height: 100%;
     text-align: center;
-    background-color: rgb(255, 242, 225);
+    background-color: #F7EAE2;
     
+  }
+
+  label{
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   input{

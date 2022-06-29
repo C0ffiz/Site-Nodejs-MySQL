@@ -1,7 +1,8 @@
 const Cliente = require('../models/Cliente')
 const Promo = require('../models/Promo')
+const Sobre = require('../models/Sobre')
 
-module.exports = class AlunoController {
+module.exports = class Controller {
     static createCliente(req, res) {
         res.render('clientes/create', {layout: "dashboard"})
     }
@@ -14,19 +15,21 @@ module.exports = class AlunoController {
         }
 
         Cliente.create(cliente)
-            .then(res.redirect('dashboard'))
+            .then(res.redirect(301,'dashboard'))
             .catch((err) => console.log())
     }
 
     static showCliente(req, res) {
       Promo.findAll({ raw: true })
+      
       .then((data) => {
-       
-
-        res.render('layouts/main', { promos: data})
+        Sobre.findAll({ raw: true })
+            .then((data1) => {
+         res.render('layouts/main', { promos: data, sobres: data1})
+        })
     })
         .catch((err) => console.log(err))
-        
+
     }
 
     static showDashboard(req, res) {
@@ -49,7 +52,7 @@ module.exports = class AlunoController {
         const id = req.body.id
 
         Cliente.destroy({ where: { id: id } })
-            .then(res.redirect('dashboard'))
+            .then(res.redirect(301,'dashboard'))
             .catch((err) => console.log())
     }
 
@@ -72,7 +75,7 @@ module.exports = class AlunoController {
         }
 
         Cliente.update(cliente, { where: { id: id } })
-            .then(res.redirect('dashboard'))
+            .then(res.redirect(301,'dashboard'))
             .catch((err) => console.log())
     }
 
@@ -88,7 +91,7 @@ module.exports = class AlunoController {
         console.log(cliente)
 
         Cliente.update(cliente, { where: { id: id } })
-            .then(res.redirect('dashboard'))
+            .then(res.redirect(301,'dashboard'))
             .catch((err) => console.log())
     }
 
@@ -122,7 +125,7 @@ module.exports = class AlunoController {
                 if (err) return res.status(500).send(err);
             
             Promo.update(promo, { where: { id: id } })
-                .then(res.redirect('dashboard'))
+                .then(res.redirect(301,'dashboard'))
                 .catch((err) => console.log())
 
 
@@ -130,6 +133,39 @@ module.exports = class AlunoController {
     }
 
     static updateSobre(req,res) {
+        console.log(req.body);
+
+        let uploadPath;
         
+        let {sobretxt, sampleFile} = req.body
+        sampleFile = req.files.sampleFile;
+
+        let img = sampleFile.name;
+        console.log(img);
+
+        let sobre = {sobretxt, img}
+        console.log(sobretxt, img);
+
+        if(!req.files || Object.keys(req.files).length === 0){
+            return res.status(400).send('Nenhuma imagem foi enviada.')
+        }
+
+            sampleFile = req.files.sampleFile;
+            uploadPath = process.cwd() + '/public/imgs/' + sampleFile.name;
+
+            console.log(sampleFile);
+
+        sampleFile.mv(uploadPath, function (err) {
+            if (err) return res.status(500).send(err);
+
+        console.log(sobre);
+
+        Sobre.update(sobre, { where: { id: 1 } })
+
+            .then(res.redirect(301,'dashboard') )
+            .catch((err) => console.log())
+            
+        });
+
     }
 }

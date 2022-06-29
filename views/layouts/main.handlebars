@@ -40,18 +40,19 @@
 
 html,body{
   background-color: #f7eae2;
+  overflow: visible;
   width: 100%; 
   height: 100%;
   margin: 0;
   padding: 0;
   
+  
 }
 
 #imagemcentral{
-  
-  margin-left: auto;
-  margin-right: auto;
+  padding-top: 70px;
 }
+
 
 #sobre{
   background-color: #DAA89F;
@@ -67,6 +68,10 @@ p {
     margin:0;
 }
 
+ul{
+  list-style: none;
+}
+
 .formcrud{
   background-color: #f7eae2
 }
@@ -75,6 +80,19 @@ p {
   position: absolute;
   top: 100px;
   left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 70px;
+  font: bold;
+  font-family: 'SF Compact Text';
+  color: #7D3436;
+}
+
+.top2 {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
   font-size: 70px;
   font: bold;
@@ -92,9 +110,9 @@ p {
 }
 
 .centered img{
-  padding-right: 150px;
-  padding-left: 150px;
-  width: 100%;
+  padding-right: 100px;
+  padding-left: 100px;
+  width: 500px;
 }
 
 .promocoes{
@@ -116,7 +134,7 @@ p {
   padding-top: 100px;
   padding-bottom: 100px;
   display: inline-block;
-  width: 100%;
+  width: 90%;
   color: #7D3436;
   
 }
@@ -135,41 +153,45 @@ p {
   background-color: #7D3436;
   width: 100%;
   height: 305px;
+  
 }
 
 </style>
 
 <body>
 
-  <nav class="navbar navbar-custom navbar-expand-sm" style="width: 100%; height: 122px;">
-    <div class="container-fluid" style="width: 100%; height: 122px;">
+  <nav class="navbar navbar-custom navbar-expand-sm" style=" height: 122px;">
+    <div class="container-fluid" style=" height: 122px;">
       <div class="navbar-header">
         <a class="navbar-brand" href="javascript:void(0)"><img src="./imgs/logo.png" style="width: 111px;"></a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li class="nav-item"><a class="nav-link text-light" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="#">Sobre</a></li>
-        <li class="nav-item"><a class="nav-link text-light" href="#">Promoções</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#google">Home</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link text-light" href="#promocoes">Promoções</a></li>
         <li class="nav-item"><a class="nav-link text-light" href="#" data-bs-toggle="modal" data-bs-target="#reg-modal">
           Login</a></li>
       </ul>
     </div>
   </nav>
 
-  <div class="">
-    <div class="row" style="">
-      <div class="col-lg-4 col-md-4 col-sm-6"><img src="./imgs/flor-esquerda.png"></div>
-      <div class="col-lg-4 col-md-4 col-sm-6"><img src="./imgs/imagemcentral.png" id="imagemcentral"></div>
-      <div class="col-lg-4 col-md-4 col-sm-6"><img src="./imgs/flor-direita.png" style="float: right;"></div>
+  <div class="container-fluid" style=" margin: 0; padding: 0; border: 0px;" id="home">
+    <div class="row" style=" height: 100%; border: 0px;">
+      <div class="col-lg-5 col-md-5 col-xs-5" style="width: 20%; height: 100%"><img src="./imgs/flor-esquerda.png"></div>
+      <div class="col-lg-5 col-md-5 col-xs-5" style="width: 10%; height: 10%"></div>
+      <div class="col-lg-5 col-md-5 col-xs-5" style="width: 40%; height: 40%"><img src="./imgs/imagemcentral.png" style="width: 100%;" id="imagemcentral"></div>
+      <div class="col-lg-5 col-md-5 col-xs-5" style="width: 10%; height: 10%"></div>
+      <div class="col-lg-5 col-md-5 col-xs-5" style="width: 20%; height: 100%"><img src="./imgs/flor-esquerda.png" style="transform: rotate(180deg); width: 334px; height: 809px; float: right;"></div>
   </div>
 
+{{#each sobres}}
   <div class="sobre-isso">
-    <div class="row">
+    <div class="row" style="width: 100%;">
       <div class="col text-center" id="sobre">
         <div style="margin: 100px;">
           <h5 style="font-size: 70px; color: #7D3436;">Sobre</h5>
           <br><br>
-          <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+          <p>{{this.sobretxt}}</p>
         </div>
       </div>
       <div class="col" style="background-color: #f7eae2;">
@@ -177,15 +199,22 @@ p {
       </div>
     </div>
   </div>
+{{/each}}
 
-  <div>
-    <div>
-      <img src="imgs/tela Localizacao.png" style="width: 100%; height: 100%;">
+
+<div style="position: relative; text-align: center; width: 100%;">
+    <img src="imgs/tela Localizacao.png" style="width: 100%; height: 100%;">
+    <div class="top2"><h5 style="font-size: 70px; color: #7D3436; width: 100%; left: 0; right: 0;">Localização</h5></div>
+  <div style="top: 210px; left: 68px">
+    <div style="width=700px; height=382px; position: absolute; z-index: 1000; top: 310px; right: 68px">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.9009617228335!2d-48.065541435910006!3d-15.809175341650723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3344e001c96d%3A0x8b6d7f5a090815a4!2sP%C3%A2tisserie%20Bolos!5e0!3m2!1sen!2sbr!4v1655945998550!5m2!1sen!2sbr" width="900" height="582" style="border:50px; border-width: 3px; border-color: black; border-style: groove; border-radius: 30px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
+</div>
+
 
   <div style="">
-    <div style="position: relative; text-align: center;">
+    <div style="position: relative; text-align: center; width: 99%;">
       <img src="imgs/Bloco Galeria.png" style="width: 100%; height: 50%;">
       <div class="top"><h5 style="font-size: 70px; color: #7D3436;">Galeria</h5></div>
         <div class="centered">
@@ -194,7 +223,7 @@ p {
             <div class="col-lg-4 col-md-4 col-sm-6">
               <img src="imgs/foto galeria.png">
             </div>
-            
+
             <div class="col-lg-4 col-md-4 col-sm-6">
               <img src="imgs/foto galeria.png">
             </div>
@@ -208,12 +237,12 @@ p {
     </div>
   </div>
 
-  <div class="promocoes">
+  <div class="promocoes" id="promocoes">
     <h5 style="font-size: 70px; font:bold; color: #7D3436;">Promoções</h5>
     <div class="promocenter">
       <div class="row">
         {{#each promos}}
-          <div class="col-lg-3 col-md-4 col-sm-6" style="width: ;">
+          <div class="col-lg-3 col-md-4 col-sm-6" style="">
             {{#if this.img}}
               <img src="imgs/{{this.img}}" alt="Promo Image">
             {{else}}
@@ -228,14 +257,18 @@ p {
     </div>
   </div>
 
-  <div class="footer">
-    <div class="container-fluid">
-      <div>
+  <div class="footer" style="height: 305px;">
+    <div class="container-fluid" style="text-decoration: none!important;">
+      
         <a class="navbar-brand" href="javascript:void(0)"><img src="./imgs/logo2.png" style="width: 434px; height: 304px;"></a>
-      </div>
-      <div>
-        
-      </div>
+      
+      <ul class="" style="display: inline; float: right; padding-right: 200px;  padding-top: 40px;">
+        <li style="padding-left: 100px;"><a href="https://www.instagram.com/patisseriebolos/"><img src="./imgs/instagram.png" style="width: 63px;" ></a><a href="https://contate.me/patisseriebolos/"><img src="./imgs/whatsapp.png" style="padding-left: 30px;"></a></li>
+        <li style="padding-top: 20px;"><a style="font-family: SF Compact Text; color: #FAF3EB; font-size: 20px;"><img src="./imgs/mark.png"> CND 02, Lt 01, Loja 8 - CEP 72120025<br>
+        Taguatinga Norte, Brasília - Df</a></li>
+        <li style="padding-top: 20px;"><a style="font-family: SF Compact Text; color: #FAF3EB; font-size: 20px;"><img src="./imgs/hour.png"> De segunda à sexta: 09:00hrs às 19:00hrs<br>
+        Sábado: 09:00hrs às 13:00hrs</a></li>
+      </ul>
     </div>
   </div>
 
@@ -279,7 +312,7 @@ p {
     })
 
     function login_redirect(){
-      window.location = ("/alunos/dashboard")
+      window.location = ("/bolos/dashboard")
     }
   </script>
   

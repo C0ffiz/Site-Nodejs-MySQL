@@ -12,7 +12,7 @@
     
     {{#each cliente}}
         <b>{{this.nome}}</b> - 
-          <form action="/alunos/updatestatus" method="POST" style="display: inline;">
+          <form action="/bolos/updatestatus" method="POST" style="display: inline;">
             <input type="hidden" name="id" value={{this.id}}>
             <input type="hidden" name="status" value={{this.status}}>
             <button type="submit" class="btn btn-success btn">
@@ -24,30 +24,30 @@
             </button>
           </form>
           
-          {{!-- <form action="/alunos/edit/{{this.id}}" style="display: inline;">
+          {{!-- <form action="/bolos/edit/{{this.id}}" style="display: inline;">
               <input type="submit" value="editar" />
           </form> --}}
           
-          <form action="/alunos/remove" method="POST" style="display: inline;">
+          <form action="/bolos/remove" method="POST" style="display: inline;">
             <input type="hidden" name="id" value={{this.id}}>
             <button type="submit" class="btn btn-danger">
               excluir
             </button>
           </form>
           
-          <button type="button" class="btn btn-primary"><a href="/alunos/edit/{{this.id}}" style="color: white; text-decoration: none;">editar</a></button>
+          <button type="button" class="btn btn-primary"><a href="/bolos/edit/{{this.id}}" style="color: white; text-decoration: none;">editar</a></button>
           
       <hr>
     {{/each}}
     
-    <button type="button" class="btn btn-dark"><a href="/alunos/add" style="text-decoration: none; color: white;">Add</a></button><br><br>
+    <button type="button" class="btn btn-dark"><a href="/bolos/add" style="text-decoration: none; color: white;">Add</a></button><br><br>
     
 </div>
 <br>
 <div class="all-div">
   <h1>Promoções</h1><br>
 
-  <form action="/alunos/updatepromo" method="POST" enctype="multipart/form-data">
+  <form action="/bolos/updatepromo" method="POST" enctype="multipart/form-data">
     <b>Promoção</b><br>
     <label for="nome"></label>
     <input class="form-control" type="text" name="produto" placeholder="Produto"><br>
@@ -55,7 +55,7 @@
     <input class="form-control" type="file" name="sampleFile" accept="image/*"/><br>
     <label for="id"><b>ID:</b></label>
     <input type="number" id="id" name="id" ><br><br><br>
-    <input class="btn btn-primary btn" type="submit" value="Inserir"><br><br>
+    <input class="btn btn-primary btn" style="background-color: #7D3436" type="submit" value="Inserir"><br><br>
   </form>
 
 </div>
@@ -65,14 +65,13 @@
 <div class="all-div">
   <h1>Sobre</h1><br>
 
-  <form action="/alunos/updatesobre" method="POST" enctype="multipart/form-data">
+  <form action="/bolos/updatesobre" method="POST" enctype="multipart/form-data">
     <b>Sobre</b><br>
-    
     {{!-- <input class="form-control" type="text" name="produto" placeholder="Texto"><br> --}}
-    <textarea class="form-control" type="text" rows="3"></textarea><br>
+    <textarea class="form-control" type="text" name="sobretxt" rows="3"></textarea><br>
     <input class="form-control" type="file" name="sampleFile" accept="image/*"/><br>
     <br><br><br>
-    <input class="btn btn-primary btn" type="submit" value="Inserir"><br><br>
+    <input class="btn btn-primary btn" style="background-color: #7D3436" type="submit" value="Inserir"><br><br>
   </form>
 
 </div>
@@ -92,7 +91,7 @@
 
   section{
     width: 100%;
-    background-color: rgb(255, 242, 225);
+    background-color: #F7EAE2;
     text-align: center;
     justify-content: center;
     
@@ -113,7 +112,7 @@
 
     width: 520px;
     margin: auto;
-    background-color: bisque;
+    background-color: #DAA89F;
     border-radius: 3ch;
     border-color: black;
     border-style: solid;

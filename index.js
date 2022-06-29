@@ -9,7 +9,7 @@ const conn = require('./db/conn')
 
 const Cliente = require('./models/Cliente')
 
-const alunoRoutes = require('./routes/alunosRoutes')
+const Routes = require('./routes/Routes')
 
 app.engine('handlebars', exphbs())
 app.set('view engine', 'handlebars')
@@ -24,7 +24,7 @@ app.use(express.json())
 
 app.use(express.static('public'))
 
-app.use('/alunos', alunoRoutes)
+app.use('/bolos', Routes)
 
 conn
   .sync()
